@@ -837,7 +837,7 @@ static void lcd_implementation_status_screen() {
 
         lcd.write(' ');
 
-        _draw_axis_value(Y_AXIS, ftostr4sign(LOGICAL_Y_POSITION(current_position[Y_AXIS])), blink);
+        _draw_heater_status(1, LCD_STR_THERMOMETER[0], blink); //_draw_axis_value(Y_AXIS, ftostr4sign(LOGICAL_Y_POSITION(current_position[Y_AXIS])), blink);
 
       #endif // HOTENDS <= 2 && (HOTENDS <= 1 || !HAS_HEATED_BED)
 

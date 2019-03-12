@@ -790,7 +790,8 @@ static void lcd_implementation_status_screen() {
 
     #endif // HOTENDS > 1 || HAS_HEATED_BED
   lcd.setCursor(17, 0);
-  lcd.print(itostr3(thermalManager.degHotend(2)));
+  lcd.print(itostr3(thermalManager.degChamber() + 0.5));
+	  
   #endif // LCD_WIDTH >= 20
 
   //
@@ -836,7 +837,7 @@ static void lcd_implementation_status_screen() {
 
         _draw_axis_value(X_AXIS, ftostr4sign(LOGICAL_X_POSITION(current_position[X_AXIS])), blink);
 
-        //lcd.write(' ');
+        lcd.write(' ');
 
         _draw_axis_value(Y_AXIS, ftostr4sign(LOGICAL_Y_POSITION(current_position[Y_AXIS])), blink);
 
@@ -844,12 +845,9 @@ static void lcd_implementation_status_screen() {
 
     #endif // LCD_WIDTH >= 20
 
-    lcd.setCursor(LCD_WIDTH - 10, 1);
+    lcd.setCursor(LCD_WIDTH - 8, 1);
     _draw_axis_value(Z_AXIS, ftostr52sp(LOGICAL_Z_POSITION(current_position[Z_AXIS])), blink);
 
-    lcd.setCursor(LCD_WIDTH - 1, 1);
-    lcd.write('37');
-	
     #if HAS_LEVELING && !HAS_HEATED_BED
       lcd.write(planner.leveling_active || blink ? '_' : ' ');
     #endif

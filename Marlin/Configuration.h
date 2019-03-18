@@ -609,7 +609,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 200, 200, 800, 300 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 200, 200, 800, 285 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1088,12 +1088,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  //#define PROBE_PT_1_X 15
-  //#define PROBE_PT_1_Y 180
-  //#define PROBE_PT_2_X 15
-  //#define PROBE_PT_2_Y 20
-  //#define PROBE_PT_3_X 170
-  //#define PROBE_PT_3_Y 20
+  #define PROBE_PT_1_X 24
+  #define PROBE_PT_1_Y 6
+  #define PROBE_PT_2_X 229
+  #define PROBE_PT_2_Y 6
+  #define PROBE_PT_3_X 177
+  #define PROBE_PT_3_Y 202
 #endif
 
 /**
@@ -1146,8 +1146,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 25   // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT 25    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT 23   // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT 5    // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
@@ -1280,7 +1280,7 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MIN_POS + 10), 20 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MIN_POS), 20 }
   #define NOZZLE_PARK_XY_FEEDRATE 100   // X and Y axes feedrate in mm/s (also used for delta printers Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE 5      // Z axis feedrate in mm/s (not used for delta printers)
 #endif

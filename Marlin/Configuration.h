@@ -1088,12 +1088,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 24
-  #define PROBE_PT_1_Y 6
-  #define PROBE_PT_2_X 229
-  #define PROBE_PT_2_Y 6
+  #define PROBE_PT_1_X 34
+  #define PROBE_PT_1_Y 26
+  #define PROBE_PT_2_X 209
+  #define PROBE_PT_2_Y 26
   #define PROBE_PT_3_X 177
-  #define PROBE_PT_3_Y 202
+  #define PROBE_PT_3_Y 182
 #endif
 
 /**
@@ -1146,8 +1146,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 23   // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT 5    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT 30   // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT 30    // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)

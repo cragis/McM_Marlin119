@@ -1,3 +1,9 @@
+# Local Mod of Marlin
+
+Used at Marietta College.  Printers are Prusa Bear derived built from scratch, using BLTouch sensor.  Mostly just configuration changes to Marlin, though there are a few menu changes.
+
+# About Marlin:
+
 # Marlin 3D Printer Firmware
 
 [![Build Status](https://travis-ci.org/MarlinFirmware/Marlin.svg?branch=RCBugFix)](https://travis-ci.org/MarlinFirmware/Marlin)
